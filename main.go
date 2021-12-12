@@ -2,6 +2,17 @@ package main
 
 import "fmt"
 
+//everytime iota keyword is used it increments iotas value by 1
+const (
+	first  = iota + 6
+	second = 2 << iota // 2 times 2 1 time as iota is equal to 1 since it is used once
+	third
+)
+
+const (
+	fourth = iota
+)
+
 func main() {
 	// Variable declarations and primitive data types.
 
@@ -54,4 +65,16 @@ func main() {
 	fmt.Println(numValue + 3)
 
 	fmt.Println(float32(numValue) + 1.2) // Allows us to add numValue int to the float32Bit number 1.2
+
+	// Iota constants
+	// Iota constants follow the same rule as Go built in constants
+	// Iota resets between different constant blocks
+
+	// first prints 6 as iota is 0 + 6
+	// second prints 4 as iota is now 1 and the expression 2 >> iota is equal to 2 times 2 one time\
+	// third is 8 as the value is not declared so it will add iota to 6.
+	// fourth will be 0 as iota is being used in seperate constant block
+	// << >> bitshift operators
+	fmt.Println(first, second, third, fourth)
+
 }
