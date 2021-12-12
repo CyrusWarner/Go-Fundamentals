@@ -45,4 +45,13 @@ func main() {
 
 	newFirstName = "Riana"
 	fmt.Println(newPtr, *newPtr) // memory address will still be the same but the dereferenced value is changed
+
+	// Constants
+	const pi = 3.1415 // Has to be initialized when it is declared. Cannot assign a const variable to a function that returns a value.
+	fmt.Println(pi)
+
+	const numValue int = 3
+	fmt.Println(numValue + 3)
+
+	fmt.Println(float32(numValue) + 1.2) // Allows us to add numValue int to the float32Bit number 1.2
 }
