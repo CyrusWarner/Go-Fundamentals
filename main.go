@@ -5,6 +5,8 @@
 // Arrays
 // Slices
 // Maps
+// ListenAndServe
+// Loops
 
 package main
 
@@ -25,6 +27,40 @@ func main() {
 
 // NOTES TO LOOK BACK AT FOR FUTURE REFERENCE IF NEEDED
 
+func loopTest() {
+	var i int
+	var e int
+	for i < 5 { // loop till condition clause since it depends on the value of i
+		println(i)
+		i++
+	}
+	for e < 5 { // loop till condition with continue
+		println(e)
+		e++
+		if e == 3 {
+			continue // continue allows us to stop a single iteration and continue with the for loop
+		}
+		println("continuing...")
+	}
+	for c := 0; c < 5; c++ { // first statement utilizes implicit initialization syntax variable can only be used within that for loop
+		println(c)
+	}
+	// create an infinite loop by only  writing for {} with no statements
+
+	// looping over collections
+	slice := []int{1, 2, 3}
+	for i, v := range slice { // i is the index and v is the value at the index similar to a map
+		println(i, v)
+	}
+	for i := range slice { // if I only want the index just remove the second variable
+		println(i)
+	}
+	wellKnownPorts := map[string]int{"http": 80, "https": 443}
+	for _, v := range wellKnownPorts { // If I only want value I can completely ignore the key by putting an _
+		println(v)
+	}
+
+}
 func testMain() {
 	port := 3000
 	p, err := testStartWebServer(port) // use two variables to get the returned variable values
