@@ -10,18 +10,17 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 
-	"github.com/webservice/models"
+	"github.com/webservice/controllers"
 )
 
 func main() {
-	user := models.User{
-		ID:        2,
-		FirstName: "Cyrus",
-		LastName:  "Warner",
-	}
-	fmt.Println(user)
-	notes()
+	controllers.RegisterControllers()
+
+	// ListenAndServe takes in 2 parameters the first being the ip address
+	// and the second being the serveMox that handles all the requests coming in and handle the high level routing
+	http.ListenAndServe(":3000", nil)
 }
 
 // NOTES TO LOOK BACK AT FOR FUTURE REFERENCE IF NEEDED
