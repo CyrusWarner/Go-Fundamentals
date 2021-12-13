@@ -2,6 +2,8 @@
 // Variable declarations and primitive data types
 // Pointer data types and & operator for pointing to a pointers memory address
 // Constants and Iota Constants
+// Arrays
+// Slices
 
 package main
 
@@ -120,4 +122,18 @@ func main() {
 
 	fmt.Println(slice3, slice4, slice5)
 
+	// Maps
+	// Maps associate arbitrary keys with the values we are storing in a collection
+	// Maps are not read only
+
+	// short declaration syntax
+	m := map[string]int{"foo": 42} // string is the key and int is the value being stored. The key is foo and the value is 42
+	fmt.Println(m)
+	fmt.Println(m["foo"]) // prints the value at the specified key
+
+	m["foo"] = 27 // Reassigns the value at the key "foo" to 27
+	fmt.Println(m)
+
+	delete(m, "foo") // the first element the built in delete function takes in for collections is the map and the second element is the key we want to delete and the associated value
+	fmt.Println(m)
 }
