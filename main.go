@@ -1,3 +1,8 @@
+// Has notes for the following sections of course
+// Variable declarations and primitive data types
+// Pointer data types and & operator for pointing to a pointers memory address
+// Constants and Iota Constants
+
 package main
 
 import "fmt"
@@ -76,5 +81,43 @@ func main() {
 	// fourth will be 0 as iota is being used in seperate constant block
 	// << >> bitshift operators
 	fmt.Println(first, second, third, fourth)
+
+	// Arrays
+	// long way of creating an array
+	var arr [3]int //declares an array with 3 integers
+	arr[0] = 1     // array at index 0 is equal to 1
+	arr[1] = 2     // array at index 1 is equal to 2
+	arr[2] = 3     // array at index 2 is equal to 3
+	fmt.Println(arr)
+	fmt.Println(arr[1]) // arrays are bounded so do not try to access an index that doesnt exist in the array
+
+	// short way of creating an array
+	arr2 := [3]int{1, 2, 3}
+	fmt.Println(arr2)
+
+	// Slices
+	arr3 := [3]int{1, 2, 3}
+
+	// creates a slice of the arr3 varialbe and assigns it to the slice variable
+	// points to the data that the variable arr3 is holding so when printing the values they will be identical.
+
+	slice := arr3[:]
+
+	arr3[1] = 42
+	slice[2] = 27
+
+	fmt.Println(arr3, slice)
+
+	slice2 := []int{1, 2, 3} // Go automatically resizes the array for us
+	fmt.Println(slice2)
+
+	slice2 = append(slice2, 4, 42, 27) // adding element to the slice2 array with the append function
+	fmt.Println(slice2)
+
+	slice3 := slice2[1:]  // Creates a slice of the value at index 1 and every index afer index 1
+	slice4 := slice2[:2]  // Creates a slice of every value before index 2 and not including the value at index 2
+	slice5 := slice2[1:2] // Creates a slice of the value at index 1 and everything before index 2 and not including index 2
+
+	fmt.Println(slice3, slice4, slice5)
 
 }
