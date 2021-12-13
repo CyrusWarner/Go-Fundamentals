@@ -21,9 +21,22 @@ func main() {
 		LastName:  "Warner",
 	}
 	fmt.Println(user)
+	notes()
 }
 
 // NOTES TO LOOK BACK AT FOR FUTURE REFERENCE IF NEEDED
+
+func testMain() {
+	port := 3000
+	p, err := testStartWebServer(port) // use two variables to get the returned variable values
+	fmt.Println(p, err)
+}
+func testStartWebServer(port int) (int, error) { // (int, error) is how you return multiple values
+	fmt.Println("Starting Server...")
+	// do things to start the server
+	fmt.Println("Server started on port", port)
+	return port, nil
+}
 
 //everytime iota keyword is used it increments iotas value by 1
 const (
