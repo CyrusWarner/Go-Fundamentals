@@ -7,6 +7,8 @@
 // Maps
 // ListenAndServe
 // Loops
+// Looping through collections
+// panics
 
 package main
 
@@ -26,6 +28,11 @@ func main() {
 }
 
 // NOTES TO LOOK BACK AT FOR FUTURE REFERENCE IF NEEDED
+
+// Panics are used when your service simply cannot recover like you cant connect to your database
+func panicTest() {
+	panic("Something bad just happened")
+}
 
 func loopTest() {
 	var i int
