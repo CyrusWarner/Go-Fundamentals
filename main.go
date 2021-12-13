@@ -4,6 +4,7 @@
 // Constants and Iota Constants
 // Arrays
 // Slices
+// Maps
 
 package main
 
@@ -136,4 +137,27 @@ func main() {
 
 	delete(m, "foo") // the first element the built in delete function takes in for collections is the map and the second element is the key we want to delete and the associated value
 	fmt.Println(m)
+
+	// Structs
+	// Structs must be defined and then initialize an object using the struct definition as the second step
+
+	// the type is user and the user type is a struct
+	// struct being defined below including the user object
+	type user struct {
+		ID        int
+		FirstName string
+		LastName  string
+	}
+	var newUser user
+	newUser.ID = 1
+	newUser.FirstName = "Cyrus"
+	newUser.LastName = "Warner"
+	fmt.Println(newUser)
+	fmt.Println(newUser.FirstName)
+
+	user2 := user{ID: 2,
+		FirstName: "Cyrus",
+		LastName:  "Warner",
+	}
+	fmt.Println(user2)
 }
