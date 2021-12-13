@@ -8,7 +8,22 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/webservice/models"
+)
+
+func main() {
+	user := models.User{
+		ID:        2,
+		FirstName: "Cyrus",
+		LastName:  "Warner",
+	}
+	fmt.Println(user)
+}
+
+// NOTES TO LOOK BACK AT FOR FUTURE REFERENCE IF NEEDED
 
 //everytime iota keyword is used it increments iotas value by 1
 const (
@@ -21,7 +36,8 @@ const (
 	fourth = iota
 )
 
-func main() {
+// Call this method in main to see Go notes
+func notes() {
 	// Variable declarations and primitive data types.
 
 	var i int      // This is the initialized variable
