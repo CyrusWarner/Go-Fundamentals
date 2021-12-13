@@ -29,6 +29,33 @@ func main() {
 
 // NOTES TO LOOK BACK AT FOR FUTURE REFERENCE IF NEEDED
 
+func creatingIfStatements() {
+	type User struct {
+		ID        int
+		FirstName string
+		LastName  string
+	}
+
+	u1 := User{
+		ID:        1,
+		FirstName: "Cyrus",
+		LastName:  "Warner",
+	}
+	u2 := User{
+		ID:        2,
+		FirstName: "Riana",
+		LastName:  "Bratton",
+	}
+
+	if u1.ID == u2.ID {
+		println("Same User!")
+	} else if u1.FirstName == u2.FirstName {
+		println("Similar users.")
+	} else {
+		println("Different users!")
+	}
+}
+
 // Panics are used when your service simply cannot recover like you cant connect to your database
 func panicTest() {
 	panic("Something bad just happened")
